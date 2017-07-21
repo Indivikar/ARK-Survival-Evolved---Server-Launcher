@@ -1,43 +1,340 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="mainAnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowController">
+<AnchorPane fx:id="mainAnchorPane" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowController">
    <children>
-      <VBox alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-         <children>
-            <HBox alignment="CENTER" prefWidth="500.0" spacing="20.0">
-               <children>
-                  <TextField fx:id="textField" prefWidth="700.0" />
-                  <Button fx:id="button" mnemonicParsing="false" onAction="#actionButton" text="Button" />
-               </children>
-            </HBox>
-            <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
-               <tabs>
-                  <Tab text="NASA Missions">
-                     <content>
-                        <fx:include fx:id="consoleTab" source="ConsoleTab.fxml" />
-                     </content>
-                  </Tab>
-                  <Tab text="Logger">
-                     <content>
-                        <fx:include fx:id="loggerTab" source="LoggerTab.fxml" />
-                     </content>
-                  </Tab>
-                  <Tab text="Test">
-                     <content>
-                        <fx:include fx:id="testTab" source="Test.fxml" />
-                     </content>
-                  </Tab>
-               </tabs>
-            </TabPane>
-         </children>
-      </VBox>
+      <VBox alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab text="Server Config">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Anzeige">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <GridPane>
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="214.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="116.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="515.0" minWidth="10.0" prefWidth="466.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="allowThirdPersonPlayer" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" />
+                              <Label text="Erlaubt die 3rd Person Perpektive" GridPane.columnIndex="2" />
+                              <Label text="Label" GridPane.rowIndex="1" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Bauen">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="214.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="116.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="466.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="AllowCaveBuildingPvE" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" />
+                              <Label text="Erlaubt den Bau von Strukturen in Höhlen (bei aktiven PVE Modus)" GridPane.columnIndex="2" />
+                              <Label text="bDisableStructureDecayPvE" GridPane.rowIndex="1" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Deaktiviert den fortschreitenden Verfall von Gebäuden (7 Tage Standard)" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="MaxStructuresInRange" GridPane.rowIndex="2" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="(VERALTET) Legt die Anzahl Strukturen fest, die in einem bestimmten Gebiet gebaut werden dürfen" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Chat &amp; Massage">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="214.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="116.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="515.0" minWidth="10.0" prefWidth="466.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="alwaysNotifyPlayerJoined" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" />
+                              <Label text="Spieler erhalten jedes Mal eine Benachrichtung wenn ein Spieler dem Server beitritt." GridPane.columnIndex="2" />
+                              <Label text="alwaysNotifyPlayerLeft" GridPane.rowIndex="1" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Spieler erhalten jedes Mal eine Benachrichtung wenn ein Spieler den Server verlässt." GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="globalVoiceChat" GridPane.rowIndex="2" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Aktiviert den globalen Sprachchat" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Dino's">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="1000.0">
+                     <children>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="214.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="59.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="731.0" minWidth="10.0" prefWidth="723.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="bAllowFlyerCarryPvE" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" />
+                              <Label text="Erlaubt das Aufnehmen von Dinos und Spielern mit einem Flugsaurier" GridPane.columnIndex="2" />
+                              <Label text="DinoCharacterFoodDrainMultiplier" GridPane.rowIndex="1" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Legt den Wert fest, mit dem ein Dino hungrig wird. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="DinoCharacterHealthRecoveryMultiplier" GridPane.rowIndex="2" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Legt den Wert fest, mit dem ein Dino sich heilt. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="DinoCharacterStaminaDrainMultiplier" GridPane.rowIndex="3" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Legt den Wert fest, mit dem ein Dino müde wird. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label text="DinoCountMultiplier" GridPane.rowIndex="4" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label text="Gibt den Skalierungsfaktor für Dinosaurier-Spawns an. Höhere Werte erhöhen die Anzahl der Dinosaurier, die im ganzen ARK erstellt werden." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label text="DinoDamageMultiplier" GridPane.rowIndex="5" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label text="Legt den Schaden fest, den ein Dino anrichtet. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label text="DinoResistanceMultiplier" GridPane.rowIndex="6" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label text="Legt die Widerstandskraft eines Dinos fest. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Download's">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="214.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="116.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="515.0" minWidth="10.0" prefWidth="466.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="noTributeDownloads" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" />
+                              <Label text="Verbietet den Download von Spielcharakteren vom Spielserver" GridPane.columnIndex="2" />
+                              <Label text="PreventDownloadSurvivors" GridPane.rowIndex="1" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Verhindert den Download von Spielercharakteren" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="PreventDownloadItems" GridPane.rowIndex="2" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Verhindert den Download von Gegenständen " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="PreventDownloadDinos" GridPane.rowIndex="3" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Verhindert den Download von Dinos " GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="NPCs">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="214.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="116.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="515.0" minWidth="10.0" prefWidth="466.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="allowThirdPersonPlayer" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" />
+                              <Label text="Erlaubt die 3rd Person Perpektive" GridPane.columnIndex="2" />
+                              <Label text="Label" GridPane.rowIndex="1" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Ressourcen">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="140.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="29.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="961.0" minWidth="654.0" prefWidth="705.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="HarvestAmountMultiplier" />
+                              <Spinner GridPane.columnIndex="1" />
+                              <Label text="Legt die Menge an Ressourcen fest, die beim Ernten gefarmt werden. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" />
+                              <Label text="HarvestHealthMultiplier" GridPane.rowIndex="1" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Legt den Gesundheitsgrad von Ressourcen fest, der beim Sammeln von Ressourcen \&quot;abgebaut\&quot; wird. Eine höhere Gesundheit führt zu höheren Ausbeuten beim Farmen. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Spieler">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="214.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="116.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="515.0" minWidth="10.0" prefWidth="466.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="PlayerCharacterFoodDrainMultiplier" />
+                              <Spinner GridPane.columnIndex="1" />
+                              <Label text="Legt den Wert fest, mit dem ein Spieler hungrig wird. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." GridPane.columnIndex="2" />
+                              <Label text="PlayerCharacterHealthRecoveryMultiplier" GridPane.rowIndex="1" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Legt den Wert fest, mit dem ein Spieler sich heilt. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="PlayerCharacterStaminaDrainMultiplier" GridPane.rowIndex="2" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Legt den Wert fest, mit dem ein Spieler müde wird. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="PlayerCharacterWaterDrainMultiplier" GridPane.rowIndex="3" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Legt den Wert fest, mit dem ein Spieler durstig wird. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert. " GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label text="PlayerDamageMultiplier" GridPane.rowIndex="4" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label text="Legt den Schaden fest, den ein Spieler anrichtet. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label text="PlayerResistanceMultiplier" GridPane.rowIndex="5" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label text="Legt die Widerstandskraft eines Spielers fest. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert. Ein doppelter Wert hier, kann durch einen doppelten Schadenswert bei -PlayerDamageMultiplier- wieder aufgehoben werden. " GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Tag &amp; Nacht">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="214.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="116.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="515.0" minWidth="10.0" prefWidth="466.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="DayCycleSpeedScale" />
+                              <Spinner GridPane.columnIndex="1" />
+                              <Label text="Legt die Geschwindigkeit fest, mit der ein Tag im Spiel abläuft" GridPane.columnIndex="2" />
+                              <Label text="DayTimeSpeedScale" GridPane.rowIndex="1" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Legt die Geschwindigkeit fest, mit der der Tag vorbeigeht" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="NightTimeSpeedScale" GridPane.rowIndex="2" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Legt die Geschwindigkeit fest, mit der die Nacht vorbeigeht" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
    </children>
 </AnchorPane>
