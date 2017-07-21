@@ -11,7 +11,6 @@ import java.util.Properties;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import model.PfadErmitteln;
 import stage.SystemTrayIcon;
 
 public class WindowProperties {
