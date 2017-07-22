@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane fx:id="mainAnchorPane" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowController">
+<AnchorPane fx:id="mainAnchorPane" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowController">
    <children>
       <VBox alignment="CENTER" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
       <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -21,7 +22,89 @@
                <content>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="214.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="116.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="466.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="ServerAdminPassword" />
+                              <TextField maxWidth="150.0" GridPane.columnIndex="1" />
+                              <Label text="Legt das Passwort fest, dass ein Spieler eingeben muss, um sich als Administrator zu verifizieren" GridPane.columnIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="ServerPassword" GridPane.rowIndex="1" />
+                              <TextField maxWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Legt das Passwort fest, dass ein Spieler beim Betreten des Servers angeben muss" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="serverHardcore" GridPane.rowIndex="2" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Aktiviert den Hardcore Modus (wenn ein Spieler stirbt, muss er von vorne beginnen) " GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="serverPVE" GridPane.rowIndex="3" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Deaktiviert PVP und aktiviert PVE " GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="DifficultyOffset" GridPane.rowIndex="4" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label text="Legt den Schwierigkeitsgrad fest " GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Banlist" GridPane.rowIndex="5" />
+                              <TextField maxWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label text="Verweist auf eine globale Bannliste von Cheatern. Alternativ könnt ihr auch auf http://arkforum.de/banlist.txt verlinken" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="RCONPort" GridPane.rowIndex="6" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label text="Unter welchem Port soll RCON verfügbar sein?" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="RCONServerGameLogBuffer" GridPane.rowIndex="7" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <Label text="Wieviel Chat-Zeilen sollen im RCON zur Verfügung stehen?" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="AutoSavePeriodMinutes" GridPane.rowIndex="8" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <Label text="In welchem Abstand (in Minuten) soll das Spiel automatisch gespeichert werden? Hinweis: Ein höheres Intervall kann zu öfteren Lags auf dem Server führen." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                           </children>
+                        </GridPane>
                      </children>
                   </VBox>
                </content>
@@ -41,14 +124,28 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
                               <Label text="allowThirdPersonPlayer" />
                               <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" />
                               <Label text="Erlaubt die 3rd Person Perpektive" GridPane.columnIndex="2" />
-                              <Label text="Label" GridPane.rowIndex="1" />
+                              <Label text="ServerCrosshair" GridPane.rowIndex="1" />
                               <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="Zeigt dem Spieler ein Fadenkreuz an " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="erverForceNoHud" GridPane.rowIndex="2" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Zeigt keine Ingame-Bedienelemente an " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="ShowMapPlayerLocation" GridPane.rowIndex="3" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Aktiviert einen Marker auf der Karte, der die aktuelle Position des Spielers anzeigt " GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label text="SpectatorPassword" GridPane.rowIndex="4" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label text="Legt das Passwort fest, dass ein Nicht-Admin eingeben muss, um sich in den Beobachtermodus versetzen zu können. " GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label text="bUseVSync" GridPane.rowIndex="5" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label text="Deaktiviert VSync (kann bei einigen Grafikkarten die Probleme minimieren)" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                            </children>
                         </GridPane>
                      </children>
@@ -69,7 +166,17 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
                               <Label text="AllowCaveBuildingPvE" />
@@ -81,6 +188,39 @@
                               <Label text="MaxStructuresInRange" GridPane.rowIndex="2" />
                               <Spinner GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Label text="(VERALTET) Legt die Anzahl Strukturen fest, die in einem bestimmten Gebiet gebaut werden dürfen" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="StructureDamageMultiplier" GridPane.rowIndex="3" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Legt den Schaden fest, den eine Struktur erhält, wenn sie attackiert wird. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label text="StructureResistanceMultiplier" GridPane.rowIndex="4" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label text="Legt die Widerstandskraft einer Struktur fest. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label text="PvEStructureDecayPeriodMultiplier" GridPane.rowIndex="5" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label text="Legt den Zeitraum als Multiplikator fest, in der Gebäude anfangen zu verfallen. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label text="PvEStructureDecayDestructionPeriod" GridPane.rowIndex="6" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label text="Legt den Wert fest, ab wann Strukturen von anderen Spielen auf einem PVE Server zerstört werden können. Die genauen Werte sind nicht bekannt, die eingegeben werden müssen" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Label text="PvPStructureDecay" GridPane.rowIndex="7" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <Label text="Aktiviert (true) oder Deaktiviert (false) den automatischen Verfall von Gebäuden auf dem PVP Server, d.h. die Strukturen können nach einer Ablaufzeit einfach demolished werden" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                              <Label text="PerPlatformMaxStructuresMultiplier" GridPane.rowIndex="8" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <Label text="Legt den Anzahl-Multiplikator für Strukturen auf der Sattelplattform fest (Vorsichtig einstellen, zu hohe Werte führen zu massiven Performanceeinbußen)" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                              <Label text="StructureDamageRepairCooldown" GridPane.rowIndex="10" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                              <Label text="Legt die Zeitspanne fest, nach deren Ablauf eine zuvor beschädigte Struktur wieder repariert werden darf. (0 erlaubt eine Reparatur ohne Countdown)" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                              <Label text="bForceAllStructureLocking" GridPane.rowIndex="11" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                              <Label text="Servereinstellung um alle Arten von Behältnissen abschließbar zu machen" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                              <Label text="StructureDamageRepairCooldown" GridPane.rowIndex="12" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                              <Label text="Servereinstellung um verwaiste Strukturen automatisch zu zerstören (ist ein Multiplikator ausgehend vom Timer, in dem man Strukturen noch selbst für sich beanspruchen kann)" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                              <Label text="MaxPlatformSaddleStructureLimit" GridPane.rowIndex="9" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                              <Label text="Legt die maximale Anzahl Strukturen auf den Sattelplattformen fest" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                              <Label text="OverrideStructurePlatformPrevention" GridPane.rowIndex="13" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                              <Label text="Legt fest, ob Turrets auf sich bewegenden Plattformen verboten sind oder nicht. Ja verbietet es. Nein erlaubt es." GridPane.columnIndex="2" GridPane.rowIndex="13" />
                            </children>
                         </GridPane>
                      </children>
@@ -113,6 +253,9 @@
                               <Label text="globalVoiceChat" GridPane.rowIndex="2" />
                               <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Label text="Aktiviert den globalen Sprachchat" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="proximityChat" GridPane.rowIndex="3" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Aktiviert den lokalen Chat " GridPane.columnIndex="2" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                      </children>
@@ -132,6 +275,13 @@
                            <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
@@ -160,6 +310,27 @@
                               <Label text="DinoResistanceMultiplier" GridPane.rowIndex="6" />
                               <Spinner GridPane.columnIndex="1" GridPane.rowIndex="6" />
                               <Label text="Legt die Widerstandskraft eines Dinos fest. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Label text="TamedDinoDamageMultiplier" GridPane.rowIndex="7" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <Label text="Legt den Schaden eines gezähmten Dinos beim Angriff fest. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                              <Label text="TamedDinoResistanceMultiplier" GridPane.rowIndex="8" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <Label text="Legt die Widerstandskraft eines gezähmten Dinos fest. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                              <Label text="TamingSpeedMultiplier" GridPane.rowIndex="9" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                              <Label text="Legt die Geschwindigkeit beim Zähmen fest. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                              <Label text="DisableDinoDecayPvE" GridPane.rowIndex="10" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                              <Label text="Deaktiviert das automatische Unclaimen von Dinos (true) oder aktiviert es (false) " GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                              <Label text="PvEDinoDecayPeriodMultiplier" GridPane.rowIndex="11" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                              <Label text="Multiplikatorwert für die Schnellkeit bis ein Dino unclaimed gesetzt wird (höher = schneller) " wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                              <Label text="MaxTamedDinos" GridPane.rowIndex="12" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                              <Label text="Legt den Wert der maximal zähmbaren Dinos auf der Insel fest " wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                              <Label text="bPassiveDefensesDamageRiderlessDinos" GridPane.rowIndex="13" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                              <Label text="Reiterlose oder wilde Dinos können bei aktivierter Einstellung Schaden an Verteidigungsstrukturen wie Speerwällen nehmen" GridPane.columnIndex="2" GridPane.rowIndex="13" />
                            </children>
                         </GridPane>
                      </children>
@@ -245,6 +416,7 @@
                               <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
                               <Label text="HarvestAmountMultiplier" />
@@ -253,6 +425,15 @@
                               <Label text="HarvestHealthMultiplier" GridPane.rowIndex="1" />
                               <Spinner GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <Label text="Legt den Gesundheitsgrad von Ressourcen fest, der beim Sammeln von Ressourcen \&quot;abgebaut\&quot; wird. Eine höhere Gesundheit führt zu höheren Ausbeuten beim Farmen. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="ResourceNoReplenishRadiusPlayers" GridPane.rowIndex="2" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="Legt fest in welcher Entfernung zu Spielern die Ressourcen nicht mehr nachwachsen." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="ResourceNoReplenishRadiusStructures" GridPane.rowIndex="3" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="Legt fest in welcher Entfernung zu Strukturen die Ressourcen nicht mehr nachwachsen." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label text="ResourcesRespawnPeriodMultiplier" GridPane.rowIndex="4" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label text="Legt fest, wie schnell oder langsam Ressourcen nachwachsen.Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert. " wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                            </children>
                         </GridPane>
                      </children>
@@ -266,36 +447,84 @@
                         <GridPane>
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="214.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="116.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="515.0" minWidth="10.0" prefWidth="466.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="116.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="466.0" />
                            </columnConstraints>
                            <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
                               <Label text="PlayerCharacterFoodDrainMultiplier" />
                               <Spinner GridPane.columnIndex="1" />
-                              <Label text="Legt den Wert fest, mit dem ein Spieler hungrig wird. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." GridPane.columnIndex="2" />
+                              <Label text="Legt den Wert fest, mit dem ein Spieler hungrig wird. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
                               <Label text="PlayerCharacterHealthRecoveryMultiplier" GridPane.rowIndex="1" />
                               <Spinner GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label text="Legt den Wert fest, mit dem ein Spieler sich heilt. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="Legt den Wert fest, mit dem ein Spieler sich heilt. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
                               <Label text="PlayerCharacterStaminaDrainMultiplier" GridPane.rowIndex="2" />
                               <Spinner GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Label text="Legt den Wert fest, mit dem ein Spieler müde wird. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="Legt den Wert fest, mit dem ein Spieler müde wird. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
                               <Label text="PlayerCharacterWaterDrainMultiplier" GridPane.rowIndex="3" />
                               <Spinner GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label text="Legt den Wert fest, mit dem ein Spieler durstig wird. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert. " GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label text="Legt den Wert fest, mit dem ein Spieler durstig wird. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert. " wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
                               <Label text="PlayerDamageMultiplier" GridPane.rowIndex="4" />
                               <Spinner GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <Label text="Legt den Schaden fest, den ein Spieler anrichtet. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label text="Legt den Schaden fest, den ein Spieler anrichtet. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
                               <Label text="PlayerResistanceMultiplier" GridPane.rowIndex="5" />
                               <Spinner GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                              <Label text="Legt die Widerstandskraft eines Spielers fest. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert. Ein doppelter Wert hier, kann durch einen doppelten Schadenswert bei -PlayerDamageMultiplier- wieder aufgehoben werden. " GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Label text="Legt die Widerstandskraft eines Spielers fest. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert. Ein doppelter Wert hier, kann durch einen doppelten Schadenswert bei -PlayerDamageMultiplier- wieder aufgehoben werden. " wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="XPMultiplier" GridPane.rowIndex="6" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label text="Legt den Wert der Erfahrungspunkte fest, die man im Spiel sammeln kann. Ein Wert von 2.0 verdoppelt den Standardwert, ein Wert von 0.5 halbiert den Standardwert." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="KickIdlePlayersPeriod" GridPane.rowIndex="7" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <Label text="Zeitspanne bis ein inaktiver Spieler vom Server gekickt wird " wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="PreventOfflinePvPInterval" GridPane.rowIndex="8" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <Label text="Legt das Zeitintervall fest, dass ein Spieler offline sein muss, damit er als tatsächlich offline markiert wird." wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                 <GridPane.margin>
+                                    <Insets left="10.0" />
+                                 </GridPane.margin>
+                              </Label>
                            </children>
                         </GridPane>
                      </children>
@@ -328,6 +557,80 @@
                               <Label text="NightTimeSpeedScale" GridPane.rowIndex="2" />
                               <Spinner GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Label text="Legt die Geschwindigkeit fest, mit der die Nacht vorbeigeht" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="SOTF-Einstellungen">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="214.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="116.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="515.0" minWidth="10.0" prefWidth="466.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="MaxNumbersofPlayersInTribe" />
+                              <Spinner GridPane.columnIndex="1" />
+                              <Label text="SOTF-Einstellung: Legt die maximale Spieleranzahl je Tribe fest " GridPane.columnIndex="2" />
+                              <Label text="BattleNumOfTribestoStartGame" GridPane.rowIndex="1" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="SOTF-Einstellung: Legt fest, wieviele Tribes gegründet worden sein müssen, bevor der Countdown losläuft " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="TimeToCollapseROD" GridPane.rowIndex="2" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="SOTF-Einstellung: Legt die Dauer fest, die das Kraftfeld zum Kollabieren bringt " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="BattleAutoStartGameInterval" GridPane.rowIndex="3" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="SOTF-Einstellung: Legt die Countdownlänge fest vor Spielstart" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label text="BattleSuddenDeathInterval" GridPane.rowIndex="4" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label text="SOTF-Einstellung: Legt die Zeit fest, bevor der Sudden Death eintritt " GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="sonstiges">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="214.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="262.0" minWidth="10.0" prefWidth="116.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="515.0" minWidth="10.0" prefWidth="466.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="EnablePVPGamma" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" />
+                              <Label text="Erlaubt oder verbietet Gamma auf PVP Servern" GridPane.columnIndex="2" />
+                              <Label text="EnablePVEGamma" GridPane.rowIndex="1" />
+                              <CheckBox mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label text="Erlaubt oder verbietet Gamma auf PVE Servern " GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label text="MaxNumbersofPlayersInTribe" GridPane.rowIndex="2" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label text="SOTF-Einstellung: Legt die maximale Spieleranzahl je Tribe fest " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label text="BattleNumOfTribestoStartGame" GridPane.rowIndex="3" />
+                              <Spinner GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label text="SOTF-Einstellung: Legt fest, wieviele Tribes gegründet worden sein müssen, bevor der Countdown losläuft " GridPane.columnIndex="2" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                      </children>
